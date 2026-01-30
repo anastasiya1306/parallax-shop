@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/category_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid my-3">
+    <a href="{% url 'main:home' %}" class="back-btn">← На главную</a>
+</div>
+
+<div class="container my-5">
+    <div class="row g-4">
+        {% if subcategories %}
+            {% for sub in subcategories %}
+                <div class="col-md-3 col-sm-6">
+                    <a href="{% url 'main:products_by_subcategory' sub.slug %}" style="text-decoration: none;">
+                        <div class="subcategory-card">
+                            {% if sub.image %}
+                                <img src="{{ sub.image.url }}" alt="{{ sub.name }}">
+                            {% endif %}
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Подкатегории пока не добавлены</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

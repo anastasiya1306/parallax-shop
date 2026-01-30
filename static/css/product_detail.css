@@ -1,0 +1,113 @@
+.back-btn {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    transform: scale(1.05);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Белая карточка товара */
+.product-card-wrapper {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.product-info {
+    padding-left: 20px;
+}
+
+.product-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #e67e22;
+}
+
+.product-description p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.product-specs {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.product-specs table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+}
+
+.product-specs tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.product-specs td {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    color: #333;
+    vertical-align: top;
+}
+
+.product-specs td:first-child {
+    width: 40%;
+    font-weight: 600;
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+.product-specs tr:last-child {
+    border-bottom: none;
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+
+    .product-card-wrapper {
+        padding: 20px;
+    }
+
+    .product-title {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .product-info {
+        padding-left: 0;
+    }
+
+    .product-image {
+        max-height: 300px;
+        margin: 0 auto 20px;
+        display: block;
+    }
+
+    .product-specs td {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+}

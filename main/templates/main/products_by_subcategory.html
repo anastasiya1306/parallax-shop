@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/products_by_subcategory.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid my-3">
+    {% if show_back_to_category %}
+        <a href="{% url 'main:category_detail' category.slug %}" class="details-btn">← Назад</a>
+    {% else %}
+        <a href="{% url 'main:home' %}" class="details-btn">← На главную</a>
+    {% endif %}
+</div>
+
+
+<div class="container my-5">
+    <div class="row gx-4 gy-4">
+        {% if products %}
+            {% for product in products %}
+            <div class="col-md-3 col-sm-6">
+                <div class="product-card">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% endif %}
+                    <div class="product-title">{{ product.name }}</div>
+                    <a href="{% url 'main:product_detail' product.slug %}" class="details-btn">Подробнее</a>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Товары пока не добавлены</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

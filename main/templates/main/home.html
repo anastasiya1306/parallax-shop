@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="menu-section">
+    <div class="menu-container">
+        <ul class="category-list">
+            {% for category in categories %}
+            <li>
+                
+                {% if category.has_own_page %}
+                    <a href="{% url 'main:category_detail' category.slug %}" class="category-box">
+                        <span>{{ category.name }}</span>
+                    </a>
+                {% else %}
+                    <div class="category-box">
+                        <span>{{ category.name }}</span>
+                    </div>    
+                {% endif %}
+
+                {% if not category.has_own_page %}
+                <ul class="submenu">
+                    {% for sub in category.subcategories.all %}
+                    <li>
+                        <a href="{% url 'main:products_by_subcategory' sub.slug %}">{{ sub.name }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
