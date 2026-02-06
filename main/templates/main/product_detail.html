@@ -9,7 +9,7 @@
 {% block content %}
 
 <div class="container-fluid my-3">
-    <a href="{% url 'main:products_by_subcategory' product.subcategory.slug %}" class="back-btn">← Назад к категории</a>
+    <a href="{% url 'main:products_by_subcategory' product.subcategory.slug %}" class="back-btn">← Назад</a>
 </div>
 
 <div class="container my-5">
@@ -17,20 +17,21 @@
 
         <div class="row g-4 align-items-start">
 
-            <!-- Фото -->
-            <div class="col-md-5">
+            <div class="col-md-5 text-center">
                 {% if product.image %}
                     <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
                 {% endif %}
             </div>
 
-            <!-- Описание -->
             <div class="col-md-7 product-info">
                 <h1 class="product-title">{{ product.name }}</h1>
 
+                <div class="product-price">
+                    {{product.price | floatformat:0 }} руб.
+                </div>
+
                 {% if product.description %}
                     <div class="product-description">
-                        <h5>Описание</h5>
                         <p>{{ product.description }}</p>
                     </div>
                 {% endif %}
@@ -39,21 +40,21 @@
         </div>
 
         {% if product.characteristics %}
-            <div class="product-specs">
-                <h5>Характеристики</h5>
+        <section class="product-specs">
+            <h3>Характеристики</h3>
 
-                <table>
-                    <tbody>
-                        {% for name, value in product.characteristics|split_characteristics %}
-                            <tr>
-                                <td><strong>{{ name }}</strong></td>
-                                <td>{{ value }}</td>
-                            </tr>
+            <table>
+                <tbody>
+                    {% for name, value in product.characteristics|split_characteristics %}
+                        <tr>
+                            <td>{{ name }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
                         {% endfor %}
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
 
-            </div>
+        </section>
         {% endif %}
 
     </div>
