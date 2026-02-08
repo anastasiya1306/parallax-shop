@@ -1,8 +1,7 @@
 .contacts-section {
-        background-color: #3b3a3a;
-        padding: 60px 0;
+        background-color: #2f2f2f;
+        padding: 60px 20px 80px;
         text-align: center;
-        border-top: 1px solid #eaeaea;
 }
 
 .contacts-section h2 {
@@ -18,22 +17,15 @@
         flex-wrap: wrap;
         gap: 25px;
         max-width: 1100px;
-        margin: 0 auto 40px;
+        margin: 0 auto;
 }
 
 .contact-item {
         background-color: #fafafa;
-        border: 1px solid #e5e5e5;
         border-radius: 16px;
         width: 240px;
         padding: 25px 15px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        transition: all 0.3s ease;
-}
-
-.contact-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.08);
 }
 
 .contact-item h3 {
@@ -43,28 +35,11 @@
 }
 
 .contact-item p {
-        color: #555;
-        margin: 0;
-        font-size: 1rem;
-}
-
-.footer-info {
-        border-top: 1px solid #e5e5e5;
-        padding-top: 30px;
-}
-
-.footer-logo {
-        font-size: 2rem;
-        margin-bottom: 10px;
-}
-
-.footer-info p {
-        color: #777;
-        font-size: 0.95rem;
+        margin: 4px 0;
 }
 
 .contact-item a {
-        color: #555;
+        color: #222;
         text-decoration: none;
         transition: color 0.3s ease;
 }
@@ -72,4 +47,19 @@
 .contact-item a:hover {
         color: #ff9900;
         text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contacts-section {
+        padding: 40px 15px;
+    }
+
+    .contacts-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .contact-item {
+        width: 100%;
+        max-width: 320px;
+    }
 }
