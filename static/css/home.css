@@ -1,137 +1,277 @@
 .menu-container {
-           display: flex;
-           justify-content: flex-start;
-           margin-top: 30px;
-           margin-left: 10px;
-       }
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 220px;
+}
+
+.category-list > li {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.category-box {
+    background: linear-gradient(135deg, #e67e22, #d35400); /* красивый градиент */
+    padding: 14px 24px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s, background 0.3s;
+    /* transform: skewX(-10deg);  наклон кнопки */
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.4);
+}
+
+.category-box:hover {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    transform: skewX(-10deg) scale(1.05);
+}
+
+.category-box span {
+    display: inline-block;
+    transform: skewX(0deg); /* выравнивание текста */
+    font-weight: bold;
+    color: #fff;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: calc(100% + 5px); /* добавил зазор в 10px */
+    background: linear-gradient(145deg, #ff9a36, #e56b1f);
+    padding: 12px 18px;
+    border-radius: 12px;
+    list-style: none;
+    margin: 0;
+    z-index: 1000;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateX(-10px);  /* плавное появление */
+    transition: all 0.25s ease-in-out;
+}
+
+.category-list > li:hover .submenu {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.submenu li {
+    padding: 10px 15px;
+    margin: 0;
+    background: transparent;
+    transition: all 0.3s ease; /* Увеличил время анимации */
+    border-radius: 6px; /* Добавил скругление всегда */
+}
+        
+.submenu li:hover {
+    background: #d35400;
+    transform: translateX(5px) scale(1.02); /* Плавное смещение вместо skew */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* Более мягкая тень */
+}
+
+.submenu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    display: block;
+}
+
+.menu-section {
+    display: flex;
+    align-items: flex-start;
+    margin: 30px 40px;
+}
+
+.menu-container {
+    flex: 1;
+}
+
+.menu-image {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center; /* центрируем картинку внутри блока */
+}
+
+.menu-image img {
+    max-width: 900px;
+    border-radius: 12px;
+    margin-left: 0px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.advantages-section {
+    background-color: #ffffff;
+    padding: 80px 20px;
+    border-radius: 30px 30px 0 0;
+}
+
+.advantages-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.advantages-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #222;
+}
+
+.advantages-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.adv-item {
+    flex: 1 1 250px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 25px;
+    border: 2px solid #ff5722;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.adv-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.adv-number {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    background-color: #ff5722;
+    color: #ffffff;
+    font-weight: 600;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.adv-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.adv-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
 
 
-     /* Категории */
-       .category-list {
-           list-style: none;
-           padding: 0;
-           margin: 0;
-           width: 220px;
-       }
+.supplier-section {
+    padding: 80px 20px;
+}
 
-       .category-list > li {
-           position: relative;
-           margin-bottom: 10px;
-       }
+.supplier-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 60px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
 
-       .category-box {
-           background: linear-gradient(135deg, #e67e22, #d35400); /* красивый градиент */
-           padding: 14px 24px;
-           cursor: pointer;
-           border-radius: 10px;
-           transition: transform 0.2s, background 0.3s;
-           /* transform: skewX(-10deg);  наклон кнопки */
-           box-shadow: 2px 4px 10px rgba(0,0,0,0.4);
-       }
+.supplier-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #e67e22;
+    margin-bottom: 50px;
+}
 
-       .category-box:hover {
-           background: linear-gradient(135deg, #f39c12, #e67e22);
-           transform: skewX(-10deg) scale(1.05);
-       }
+.supplier-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
 
-              /* Чтобы текст не был кривым внутри */
-       .category-box span {
-           display: inline-block;
-           transform: skewX(0deg); /* выравнивание текста */
-           font-weight: bold;
-           color: #fff;
-       }
+.supplier-image {
+    flex: 0 0 380px;
+}
 
-       /* Подкатегории */
-       .submenu {
-           display: none;
-            position: absolute;
-            top: 0;
-            left: calc(100% + 5px); /* добавил зазор в 10px */
-            background: linear-gradient(145deg, #ff9a36, #e56b1f);
-            padding: 12px 18px;
-            border-radius: 12px;
-            list-style: none;
-            margin: 0;
-            z-index: 1000;
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-            opacity: 0;
-            transform: translateX(-10px);  /* плавное появление */
-            transition: all 0.25s ease-in-out;
-        }
+.supplier-image img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
 
+.supplier-info {
+    flex: 1;
+    color: #222;
+}
 
-       /* показываем подкатегории */
-       .category-list > li:hover .submenu {
-           display: block;
-            opacity: 1;
-            transform: translateX(0);
-       }
+.supplier-info p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
 
-       /* Сами элементы подкатегорий */
-       .submenu li {
-           padding: 10px 15px;
-           margin: 0;
-           background: transparent;
-           transition: all 0.3s ease; /* Увеличил время анимации */
-           border-radius: 6px; /* Добавил скругление всегда */
-       }
-        /* подчеркнем подкатегории */
-       .submenu li:hover {
-           background: #d35400;
-           transform: translateX(5px) scale(1.02); /* Плавное смещение вместо skew */
-           box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* Более мягкая тень */
-       }
+@media (max-width: 992px) {
 
-       .submenu a {
-           text-decoration: none;
-           color: #fff;
-           font-weight: 500;
-           display: block;
-       }
+    .supplier-container {
+        flex-direction: column;
+        text-align: center;
+    }
 
-       .menu-section {
-           display: flex;
-           align-items: flex-start;
-           margin: 30px 40px;
-       }
+    .supplier-image {
+        flex: unset;
+        max-width: 280px;
+        margin: 0 auto;
+    }
 
-       .menu-container {
-           flex: 1;
-       }
+    .supplier-wrapper {
+        padding: 40px 25px;
+    }
 
-     .menu-image {
-            flex: 0 0 auto;
-            display: flex;
-            justify-content: center; /* центрируем картинку внутри блока */
-       }
+    .supplier-title {
+        font-size: 1.8rem;
+    }
 
+    .supplier-info p {
+        font-size: 1rem;
+    }
+    
+    .advantages-container {
+        gap: 20px;
+    }
+}
 
-       .menu-image img {
-           max-width: 900px;
-           border-radius: 12px;
-           margin-left: 0px;
-           box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-       }
+@media (max-width: 768px) {
 
-    .advantages-section {
-      background-color: #ffffff;
-      border-radius: 25px 25px 0 0;
-      padding: 60px 40px;
-      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
-      width: 99.5vw;           /* блок на всю ширину окна */
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;     /* выравниваем, чтобы белый фон растянулся от края до края */
-      margin-right: -50vw;
+    .advantages-title {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
     }
 
     .advantages-container {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
     }
+
+    .adv-item {
+        width: 100%;
+        max-width: 400px;
+    }
+}
