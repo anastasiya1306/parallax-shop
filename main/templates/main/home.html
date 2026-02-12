@@ -100,4 +100,36 @@
 
     </div>
 </section>
+
+<section class="categories-visual">
+    <div class="categories-wrapper">
+        <h2 class="categories-title">Каталог</h2>
+
+        <div class="categories-grid">
+            {% for category in categories %}
+                {% if category.image %}
+                    
+                    {% if category.has_own_page %}
+                        <a href="{% url 'main:category_detail' category.slug %}" class="category-card">
+                    {% else %}
+                        {% with first_sub=category.subcategories.first %}
+                            {% if first_sub %}
+                                <a href="{% url 'main:products_by_subcategory' first_sub.slug %}" class="category-card">
+                            {% else %}
+                                <a href="#" class="category-card">
+                            {% endif %}
+                        {% endwith %}
+                    {% endif %}
+                    
+                        <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                        <div class="category-overlay">
+                            <span>{{ category.name }}</span>
+                        </div>
+                    </a>
+
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
 {% endblock %}

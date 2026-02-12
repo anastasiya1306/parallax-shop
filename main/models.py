@@ -6,6 +6,7 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(blank=True)
     has_own_page = models.BooleanField(default=False)
+    image = models.ImageField(upload_to='categories/', blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
