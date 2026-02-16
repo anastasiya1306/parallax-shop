@@ -38,12 +38,15 @@
             {% endfor %}
         </ul>
     </div>
+    <div class="menu-slider">
+        <img id="slider-image" src="{% static 'img/slide1.jpg' %}" alt="Слайд">
+    </div>
 </div>
 
 <section class="advantages-section">
     <div class="advantages-wrapper">
 
-        <h2 class="advantages-title">Почему выбирают нас:</h2>
+        <h2 class="advantages-title">Наши преимущества:</h2>
 
         <div class="advantages-container">
 
@@ -78,7 +81,7 @@
 <section class="supplier-section">
     <div class="supplier-wrapper">
 
-        <h2 class="supplier-title">Наш поставщик</h2>
+        <h2 class="supplier-title">Поставщик</h2>
 
         <div class="supplier-container">
             <div class="supplier-image">
@@ -103,7 +106,13 @@
 
 <section class="categories-visual">
     <div class="categories-wrapper">
-        <h2 class="categories-title">Каталог</h2>
+        <div class="categories-header">
+            <h2 class="categories-title">Наш каталог</h2>
+            <p class="categories-description">
+                Основное оборудование и комплектующие для систем орошения:
+                от насосных станций до запасных частей для дождевальных машин.
+            </p>
+        </div>
 
         <div class="categories-grid">
             {% for category in categories %}
@@ -132,4 +141,48 @@
         </div>
     </div>
 </section>
+
+<section class="info-block">
+    <div class="info-wrapper">
+
+        <div class="info-grid">
+            <div class="info-card">
+                <img src="{% static 'img/logo1.png' %}" alt="Логотип 1">
+                <p>1. Наши станции вы можете приобрести в РосАгроЛизинг по льготной ставке</p>
+            </div>
+
+            <div class="info-card">
+                <img src="{% static 'img/logo2.png' %}" alt="Логотип 2">
+                <p>2. У нашей продукции высокое качество и соответствие всем стандартам.</p>
+            </div>
+
+            <div class="info-card">
+                <img src="{% static 'img/logo3.png' %}" alt="Логотип 3">
+                <p>3. Выбирая нас, вы инвестируете в стабильность и надёжность вашего бизнеса.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.getElementById("slider-image");
+    if (!slider) return;
+
+    const images = [
+        "{% static 'img/slide1.jpg' %}",
+        "{% static 'img/slide2.jpg' %}",
+        "{% static 'img/slide3.jpg' %}",
+        "{% static 'img/slide4.jpg' %}",
+        "{% static 'img/slide5.jpg' %}"
+    ];
+
+    let current = 0;
+
+    setInterval(() => {
+        current = (current + 1) % images.length;
+        slider.src = images[current];
+    }, 7000);
+});
+</script>
 {% endblock %}

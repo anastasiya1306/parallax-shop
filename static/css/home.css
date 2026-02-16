@@ -1,15 +1,18 @@
-.menu-container {
+.menu-section {
     display: flex;
-    justify-content: flex-start;
-    margin-top: 30px;
-    margin-left: 10px;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 30px 40px;
+}
+
+.menu-container {
+    width: 250px;
 }
 
 .category-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 220px;
 }
 
 .category-list > li {
@@ -18,42 +21,40 @@
 }
 
 .category-box {
-    background: linear-gradient(135deg, #e67e22, #d35400); /* красивый градиент */
-    padding: 14px 24px;
-    cursor: pointer;
+    display: block;
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    padding: 14px 20px;
     border-radius: 10px;
-    transition: transform 0.2s, background 0.3s;
-    /* transform: skewX(-10deg);  наклон кнопки */
+    text-decoration: none;
     box-shadow: 2px 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease, background 0.3s ease;
 }
 
 .category-box:hover {
     background: linear-gradient(135deg, #f39c12, #e67e22);
-    transform: skewX(-10deg) scale(1.05);
+    transform: scale(1.05);
 }
 
 .category-box span {
-    display: inline-block;
-    transform: skewX(0deg); /* выравнивание текста */
-    font-weight: bold;
-    color: #fff;
+    font-weight: 600;
+    color: #ffffff;
 }
 
 .submenu {
     display: none;
     position: absolute;
     top: 0;
-    left: calc(100% + 5px); /* добавил зазор в 10px */
+    left: calc(100% + 8px);
     background: linear-gradient(145deg, #ff9a36, #e56b1f);
     padding: 12px 18px;
     border-radius: 12px;
     list-style: none;
     margin: 0;
     z-index: 1000;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
     opacity: 0;
-    transform: translateX(-10px);  /* плавное появление */
-    transition: all 0.25s ease-in-out;
+    transform: translateX(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .category-list > li:hover .submenu {
@@ -63,47 +64,31 @@
 }
 
 .submenu li {
-    padding: 10px 15px;
-    margin: 0;
-    background: transparent;
-    transition: all 0.3s ease; /* Увеличил время анимации */
-    border-radius: 6px; /* Добавил скругление всегда */
+    border-radius: 6px;
+    transition: background 0.3s ease;
 }
-        
+
 .submenu li:hover {
     background: #d35400;
-    transform: translateX(5px) scale(1.02); /* Плавное смещение вместо skew */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* Более мягкая тень */
 }
 
 .submenu a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
     display: block;
+    padding: 8px 12px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
 }
 
-.menu-section {
-    display: flex;
-    align-items: flex-start;
-    margin: 30px 40px;
-}
-
-.menu-container {
+.menu-slider {
     flex: 1;
 }
 
-.menu-image {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center; /* центрируем картинку внутри блока */
-}
-
-.menu-image img {
-    max-width: 900px;
-    border-radius: 12px;
-    margin-left: 0px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+.menu-slider img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 .advantages-section {
@@ -127,7 +112,6 @@
 
 .advantages-container {
     display: flex;
-    justify-content: space-between;
     gap: 30px;
     flex-wrap: wrap;
 }
@@ -145,7 +129,7 @@
 
 .adv-item:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
 }
 
 .adv-number {
@@ -162,7 +146,6 @@
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .adv-item h3 {
@@ -179,7 +162,6 @@
     margin: 0;
 }
 
-
 .supplier-section {
     padding: 80px 20px;
 }
@@ -190,7 +172,7 @@
     background-color: #ffffff;
     border-radius: 28px;
     padding: 60px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
 .supplier-title {
@@ -225,30 +207,44 @@
 .supplier-info p {
     font-size: 1.15rem;
     line-height: 1.7;
-    margin-bottom: 20px;
 }
 
 .categories-visual {
-    padding: 0 20px 80px;
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
 }
 
 .categories-wrapper {
     max-width: 1300px;
     margin: 0 auto;
+    padding: 0 20px;
+}
+
+.categories-header {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
 .categories-title {
-    text-align: center;
     font-size: 2.4rem;
     font-weight: 700;
-    color: #e67e22;
-    margin-bottom: 60px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.categories-description {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+    opacity: 0.85;
 }
 
 /* Сетка */
 .categories-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
 }
 
@@ -275,6 +271,7 @@
 /* Заголовок поверх */
 .category-overlay {
     position: absolute;
+    left: 0;
     bottom: 0;
     width: 100%;
     padding: 20px;
@@ -298,7 +295,62 @@
     transform: scale(1.05);
 }
 
+.info-block {
+    padding: 80px 20px;
+}
+
+.info-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.info-card {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 25px;
+}
+
+.info-card p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #222;
+}
+
 @media (max-width: 992px) {
+
+    .menu-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .menu-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .category-list {
+        width: 100%;
+    }
+
+    .menu-slider img {
+        height: 350px;
+    }
 
     .supplier-container {
         flex-direction: column;
@@ -368,5 +420,18 @@
 
     .category-overlay span {
         font-size: 1.1rem;
+    }
+
+    .info-grid {
+        gap: 25px;
+    }
+
+    .info-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .info-card p {
+        font-size: 1rem;
     }
 }
