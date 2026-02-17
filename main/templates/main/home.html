@@ -163,26 +163,18 @@
         </div>
     </div>
 </section>
+{% endblock %}
 
+{% block extra_scripts %}
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.getElementById("slider-image");
-    if (!slider) return;
-
-    const images = [
+    window.sliderImages = [
         "{% static 'img/slide1.jpg' %}",
         "{% static 'img/slide2.jpg' %}",
         "{% static 'img/slide3.jpg' %}",
         "{% static 'img/slide4.jpg' %}",
         "{% static 'img/slide5.jpg' %}"
     ];
-
-    let current = 0;
-
-    setInterval(() => {
-        current = (current + 1) % images.length;
-        slider.src = images[current];
-    }, 7000);
-});
 </script>
+
+<script src="{% static 'js/home.js' %}"></script>
 {% endblock %}
