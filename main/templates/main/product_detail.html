@@ -1,6 +1,7 @@
 {% extends 'main/base.html' %}
 {% load filters %}
 {% load static %}
+{% load humanize %}
 
 {% block extra_styles %}
 <link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
@@ -27,12 +28,16 @@
                 <h1 class="product-title">{{ product.name }}</h1>
 
                 <div class="product-price">
-                    {{product.price | floatformat:0 }} руб.
+                    {% if product.price == 1 %}
+                        По запросу
+                    {% else %}
+                        {{product.price | floatformat:0 | intcomma }} руб.
+                    {% endif %}
                 </div>
 
                 {% if product.description %}
                     <div class="product-description">
-                        <p>{{ product.description }}</p>
+                        <p>{{ product.description | linebreaks }}</p>
                     </div>
                 {% endif %}
             </div>

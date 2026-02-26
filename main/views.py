@@ -31,7 +31,7 @@ class ProductsBySubCategoryView(ListView):
     def get_queryset(self):
         self.subcategory = get_object_or_404(SubCategory, slug=self.kwargs['slug'])
         
-        return Product.objects.filter(subcategory=self.subcategory)
+        return Product.objects.filter(subcategory=self.subcategory).order_by('id')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
