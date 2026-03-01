@@ -39,7 +39,7 @@
         </ul>
     </div>
     <div class="menu-slider">
-        <img id="slider-image" src="{% static 'img/slide1.jpg' %}" alt="Слайд">
+        <div id="slider-media"></div>
     </div>
 </div>
 
@@ -167,12 +167,12 @@
 
 {% block extra_scripts %}
 <script>
-    window.sliderImages = [
-        "{% static 'img/slide1.jpg' %}",
-        "{% static 'img/slide2.jpg' %}",
-        "{% static 'img/slide3.jpg' %}",
-        "{% static 'img/slide4.jpg' %}",
-        "{% static 'img/slide5.jpg' %}"
+    window.sliderItems = [
+        { type: "video", src: "{% static 'videos/slide1.mp4' %}" },
+        { type: "image", src: "{% static 'img/slide1.jpg' %}", duration: 7000 },
+        { type: "video", src: "{% static 'videos/slide2.mp4' %}" },
+        { type: "video", src: "{% static 'videos/slide3.mp4' %}" },
+        { type: "image", src: "{% static 'img/slide2.jpg' %}", duration: 7000 }
     ];
 </script>
 

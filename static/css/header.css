@@ -44,12 +44,6 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.35);
 }
 
-.contact-bubble.phone {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
 .contact-bubble.phone a {
     color: inherit;
     text-decoration: none;
