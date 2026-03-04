@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 current = (current + 1) % window.sliderItems.length;
                 showSlide(current);
-            }, 500); // совпадает с transition
+            }, 200); // совпадает с transition
         } else {
             current = (current + 1) % window.sliderItems.length;
             showSlide(current);

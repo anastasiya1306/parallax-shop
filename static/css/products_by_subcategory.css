@@ -54,6 +54,23 @@
     text-decoration: none; /* не подчёркивается */
 }
 
+.pagination .page-link {
+    color: #ff9900;              /* цвет цифр */
+    border-color: #ff9900;       /* рамка */
+}
+
+.pagination .page-link:hover {
+    background-color: #ff9900;
+    color: #fff;
+    border-color: #ff9900;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #ff9900;
+    border-color: #ff9900;
+    color: #fff;
+}
+
 @media (max-width: 768px) {
     .product-card {
         height: auto; /* снимаем фикс */

@@ -29,7 +29,7 @@
 
                 <div class="product-price">
                     {% if product.price == 1 %}
-                        По запросу
+                        Цена: по запросу
                     {% else %}
                         {{product.price | floatformat:0 | intcomma }} руб.
                     {% endif %}

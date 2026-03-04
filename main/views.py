@@ -27,6 +27,7 @@ class ProductsBySubCategoryView(ListView):
     model = Product
     template_name = 'main/products_by_subcategory.html'
     context_object_name = 'products'
+    paginate_by = 12
 
     def get_queryset(self):
         self.subcategory = get_object_or_404(SubCategory, slug=self.kwargs['slug'])

@@ -168,9 +168,12 @@
 {% block extra_scripts %}
 <script>
     window.sliderItems = [
+        { type: "video", src: "{% static 'videos/slide4.mp4' %}" },
         { type: "video", src: "{% static 'videos/slide1.mp4' %}" },
+        { type: "image", src: "{% static 'img/slide4.jpg' %}", duration: 7000 },
         { type: "image", src: "{% static 'img/slide1.jpg' %}", duration: 7000 },
         { type: "video", src: "{% static 'videos/slide2.mp4' %}" },
+        { type: "image", src: "{% static 'img/slide3.jpg' %}", duration: 7000 },
         { type: "video", src: "{% static 'videos/slide3.mp4' %}" },
         { type: "image", src: "{% static 'img/slide2.jpg' %}", duration: 7000 }
     ];
