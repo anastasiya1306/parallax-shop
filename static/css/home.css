@@ -2,7 +2,7 @@
     display: flex;
     align-items: flex-start;
     gap: 40px;
-    margin: 30px 40px;
+    margin: 40px 40px 60px 40px;
 }
 
 .menu-container {
@@ -127,7 +127,7 @@
 
 .adv-item {
     flex: 1 1 250px;
-    background: #ffffff;
+    background: #fff9f1;
     border-radius: 16px;
     padding: 30px 25px;
     border: 2px solid #ff5722;
@@ -171,6 +171,48 @@
     margin: 0;
 }
 
+.about-company {
+    background: linear-gradient(135deg, #1f1f1f, #2c2c2c); /* как блок категорий */
+    padding: 100px 20px; /* больше сверху и снизу */
+}
+
+.about-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px; /* чуть больше промежуток между текстом и видео */
+    flex-wrap: wrap; /* на мобильных текст будет сверху, видео под ним */
+}
+
+.about-text {
+    flex: 1 1 500px; /* текст занимает половину ширины */
+    color: #ffffff;
+}
+
+.about-text h2 {
+    font-size: 2.4rem; /* увеличили заголовок */
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-size: 1.25rem; /* увеличили текст */
+    line-height: 1.8;   /* увеличили межстрочный интервал */
+    margin-bottom: 20px;
+}
+
+.about-video {
+    flex: 1 1 500px; /* видео занимает вторую половину */
+}
+
+.about-video video {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: block;
+}
+
 .supplier-section {
     padding: 80px 20px;
 }
@@ -188,7 +230,7 @@
     text-align: center;
     font-size: 2.2rem;
     font-weight: 700;
-    color: #e67e22;
+    color: #000000;
     margin-bottom: 50px;
 }
 
@@ -214,7 +256,7 @@
 }
 
 .supplier-info p {
-    font-size: 1.15rem;
+    font-size: 1.17rem;
     line-height: 1.7;
 }
 
@@ -391,6 +433,89 @@
 
 @media (max-width: 768px) {
 
+    .menu-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Категории */
+    .category-list {
+        width: 100%;
+        padding: 0;
+    }
+
+    .category-list > li {
+        margin-bottom: 12px;
+        position: relative;
+    }
+
+    /* Категория — большая кнопка */
+    .category-box {
+        display: block;
+        background: linear-gradient(135deg, #e67e22, #d35400);
+        padding: 14px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: 600;
+        box-shadow: 2px 4px 10px rgba(0,0,0,0.4);
+        transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .category-box:hover {
+        background: linear-gradient(135deg, #f39c12, #e67e22);
+        transform: scale(1.03);
+    }
+
+    /* Подкатегории — сразу видны, блоки внутри */
+    .submenu {
+        position: static;
+        display: block;
+        opacity: 1;
+        transform: none;
+        margin-top: 8px;
+        padding-left: 18px;
+        background: none;
+        box-shadow: none;
+    }
+
+    .submenu li {
+        margin: 6px 0;
+    }
+
+    /* Подкатегории — отдельные кнопки */
+    .submenu a {
+        display: block;
+        padding: 8px 12px;
+        border: 2px solid #ff7a00;
+        border-radius: 8px;
+        color: #e67e22;
+        background: #fff7ef;
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .submenu a:hover {
+        background: #ffe2c7;
+    }
+
+    /* Дополнительно, если меню внутри li было hover-специфично */
+    .category-list > li:hover .submenu {
+        display: block;
+    }
+
+    /* Чтобы подкатегории имели визуальную вложенность */
+    .submenu {
+        padding-left: 18px;
+    }
+
     .advantages-title {
         font-size: 1.8rem;
         margin-bottom: 40px;
@@ -406,7 +531,21 @@
         max-width: 400px;
     }
 
-     .categories-visual {
+    .about-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .categories-visual {
         padding: 50px 15px;
     }
 

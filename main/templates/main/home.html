@@ -78,6 +78,19 @@
     </div>
 </section>
 
+<section class="about-company">
+    <div class="about-wrapper">
+        <div class="about-text">
+            <h2>О компании</h2>
+            <p>Мы специализируемся на продаже дизельных насосных станций, дождевальных машин, запасных частей для дождевальных машин. Наша задача — обеспечить клиентов надёжным оборудованием высокого качества.</p>
+            <p>Преимущества работы с нами: широкий ассортимент, конкурентноспособные цены, профессиональная поддержка и консультация.</p>
+        </div>
+        <div class="about-video">
+            <video src="{% static 'videos/company.mp4' %}" autoplay muted loop playsinline></video>
+        </div>
+    </div>
+</section>
+
 <section class="supplier-section">
     <div class="supplier-wrapper">
 
@@ -85,7 +98,7 @@
 
         <div class="supplier-container">
             <div class="supplier-image">
-                <img src="{% static 'img/supplier.jpg' %}" alt="Наш поставщик">
+                <img src="{% static 'img/titan_logo.png' %}" alt="Наш поставщик">
             </div>
 
             <div class="supplier-info">
@@ -134,7 +147,7 @@
                         <div class="category-overlay">
                             <span>{{ category.name }}</span>
                         </div>
-                    </a>
+                        </a>
 
                 {% endif %}
             {% endfor %}

@@ -7,6 +7,7 @@ class Category(models.Model):
     slug = models.SlugField(blank=True)
     has_own_page = models.BooleanField(default=False)
     image = models.ImageField(upload_to='categories/', blank=True, null=True)
+    order = models.PositiveIntegerField(default=0)
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -15,6 +16,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Категории'
+        ordering = ['order']
 
     def __str__(self):
         return self.name
@@ -25,6 +27,7 @@ class SubCategory(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='subcategories/', blank=True, null=True)
     slug = models.SlugField(blank=True)
+    promo_video = models.FileField(upload_to='subcategories/videos/', blank=True, null=True, verbose_name="Промо видео")
 
     def save(self, *args, **kwargs):
         if not self.slug:
