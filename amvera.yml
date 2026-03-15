@@ -9,6 +9,8 @@ build:
   useCache: true
 
 run:
-  command: gunicorn config.wsgi:application --bind 0.0.0.0:80
+  command: >
+    python manage.py migrate &&
+    gunicorn config.wsgi:application --bind 0.0.0.0:80
   containerPort: "80"
   servicePort: "80"
