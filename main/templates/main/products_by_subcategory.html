@@ -1,6 +1,8 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
+{% block title %}{{ subcategory.name }} | {{ category.name }} | Параллакс{% endblock %}
+
 {% block extra_styles %}
 <link rel="stylesheet" href="{% static 'css/products_by_subcategory.css' %}">
 {% endblock %}

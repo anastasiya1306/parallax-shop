@@ -3,6 +3,8 @@
 {% load static %}
 {% load humanize %}
 
+{% block title %}{{ product.name }} | {{ product.subcategory.name }} | Параллакс{% endblock %}
+
 {% block extra_styles %}
 <link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
 {% endblock %}
