@@ -144,5 +144,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = [
     'https://параллакс.com',
     'https://www.параллакс.com',
+    'https://xn--80aaa4bdayjo.com',      
+    'https://www.xn--80aaa4bdayjo.com',  
     'https://parallax-shop-titan.amvera.io',
 ]
