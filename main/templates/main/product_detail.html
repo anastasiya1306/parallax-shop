@@ -33,7 +33,21 @@
                     {% if product.price == 1 %}
                         Цена: по запросу
                     {% else %}
-                        {{product.price | floatformat:0 | intcomma }} руб.
+                        {% if product.has_sale %}
+                            <span class="old-price">
+                                {{ product.price|floatformat:0|intcomma }} руб.
+                            </span>
+
+                            <span class="badge-discount">
+                                СКИДКА!
+                            </span>
+
+                            <span class="new-price">
+                                {{ product.sale_price|floatformat:0|intcomma }} руб.
+                            </span>
+                        {% else %}
+                            {{product.price | floatformat:0 | intcomma }} руб.
+                        {% endif %}
                     {% endif %}
                 </div>
 

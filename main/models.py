@@ -45,6 +45,7 @@ class Product(models.Model):
     subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, related_name='products')
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    sale_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True, verbose_name="Цена со скидкой")
     image = models.ImageField(upload_to='products/images/', blank=True, null=True)
     video = models.FileField(upload_to='products/videos/', blank=True, null=True)
     description = models.TextField(blank=True, verbose_name="Описание")
@@ -55,6 +56,10 @@ class Product(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
+
+    @property
+    def has_sale(self):
+        return self.sale_price is not None and self.sale_price < self.price
 
     class Meta:
         verbose_name_plural = 'Продукты'

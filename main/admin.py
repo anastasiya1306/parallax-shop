@@ -17,7 +17,7 @@ class SubCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'slug', 'subcategory', 'price']
+    list_display = ['id', 'name', 'slug', 'subcategory', 'price', 'sale_price']
     search_fields = ['name']
     list_filter = ['subcategory']
     prepopulated_fields = {'slug': ('name',)}
