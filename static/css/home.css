@@ -346,6 +346,52 @@
     transform: scale(1.05);
 }
 
+.leasing-form-section {
+    background-color: #333;
+    padding: 80px 20px;
+}
+
+.leasing-form-container {
+    max-width: 1300px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+
+    flex-wrap: wrap;
+}
+
+.leasing-text {
+    flex: 1;
+    min-width: 320px;
+}
+
+.leasing-text h2 {
+    color: #fff;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+
+    font-family: "Acherus Feral", sans-serif;
+}
+
+.leasing-text p {
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 550px;
+
+    font-family: "Acherus Feral", sans-serif;
+}
+
+.leasing-form {
+    flex: 1;
+    min-width: 320px;
+}
+
 .info-block {
     padding: 80px 20px;
 }
@@ -568,6 +614,23 @@
 
     .category-overlay span {
         font-size: 1.1rem;
+    }
+
+    .leasing-form-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .leasing-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .leasing-text p {
+        font-size: 1rem;
+    }
+
+    .leasing-form {
+        width: 100%;
     }
 
     .info-grid {
