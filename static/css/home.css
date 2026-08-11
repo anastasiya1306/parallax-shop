@@ -100,164 +100,157 @@
     transition: opacity 0.2s ease;
 }
 
-.advantages-section {
-    background-color: #ffffff;
-    padding: 80px 20px;
-    border-radius: 30px 30px 0 0;
+.benefits-section{
+    background: linear-gradient(90deg,#eea17f,#ff4300);
+    padding: 70px 0;
 }
 
-.advantages-wrapper {
-    max-width: 1200px;
+.benefits-card{
+    width: 88%;
+    max-width: 1350px;
     margin: 0 auto;
+    background:#242424;
+    border-radius:28px;
+    padding:65px 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:70px;
+    box-sizing:border-box;
 }
 
-.advantages-title {
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 60px;
-    color: #222;
+/* Левая часть */
+
+.benefits-left{
+    width:40%;
 }
 
-.advantages-container {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
+.benefits-left h2{
+    margin:0 0 45px;
+    color:#fff;
+    font-family: 'Involve', sans-serif;
+    font-size:42px;
+    font-weight:700;
+    line-height:1.1;
 }
 
-.adv-item {
-    flex: 1 1 250px;
-    background: #fff9f1;
-    border-radius: 16px;
-    padding: 30px 25px;
-    border: 2px solid #ff5722;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.benefits-left p{
+    margin:0;
+    color:#e9e9e9;
+    font-family: 'Involve', sans-serif;
+    font-size:15px;
+    font-weight: 400;
+    line-height:1.7;
+    max-width:360px;
 }
 
-.adv-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+/* Правая часть */
+
+.benefits-right{
+    width:60%;
 }
 
-.adv-number {
-    position: absolute;
-    top: -14px;
-    right: -14px;
-    background-color: #ff5722;
-    color: #ffffff;
-    font-weight: 600;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
+.benefit-item{
+    color:#fff;
+    font-family: "Roboto", sans-serif;
+    font-size:17px;
+    font-weight: 400;
+    line-height:1.6;
+    margin-bottom:18px;
+    padding-left:28px;
+    position:relative;
 }
 
-.adv-item h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #111;
+.benefit-item:last-child{
+    margin-bottom:0;
 }
 
-.adv-item p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-    margin: 0;
+.benefit-item::before{
+    content:"—";
+    position:absolute;
+    left:0;
 }
 
-.about-company {
-    background: linear-gradient(135deg, #1f1f1f, #2c2c2c); /* как блок категорий */
-    padding: 100px 20px; /* больше сверху и снизу */
+.model-section{
+    background:#242424;
+    padding:120px 0;
 }
 
-.about-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 60px; /* чуть больше промежуток между текстом и видео */
-    flex-wrap: wrap; /* на мобильных текст будет сверху, видео под ним */
+.model-wrapper{
+    width:90%;
+    max-width:1650px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:430px 1fr;
+    column-gap:90px;
 }
 
-.about-text {
-    flex: 1 1 500px; /* текст занимает половину ширины */
-    color: #ffffff;
+/* Заголовок */
+
+.model-title h2{
+    margin:0;
+    color:#fff;
+    font-family: "Involve",sans-serif;
+    font-size:42px;
+    font-weight:700;
+    line-height:1.05;
 }
 
-.about-text h2 {
-    font-size: 2.4rem; /* увеличили заголовок */
-    font-weight: 700;
-    margin-bottom: 25px;
+/* Правая сетка */
+
+.model-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows:repeat(3, auto);
+    column-gap:70px;
+    row-gap:70px;
 }
 
-.about-text p {
-    font-size: 1.25rem; /* увеличили текст */
-    line-height: 1.8;   /* увеличили межстрочный интервал */
-    margin-bottom: 20px;
+/* Все карточки */
+
+.model-item h3{
+    margin:0 0 18px;
+    color:#fff;
+    font-family:"Involve",sans-serif;
+    font-size:18px;
+    font-weight:700;
+    line-height:1.2;
 }
 
-.about-video {
-    flex: 1 1 500px; /* видео занимает вторую половину */
+.model-item p{
+    margin:0;
+    color:#d7d7d7;
+    font-family:"Roboto",sans-serif;
+    font-size:16px;
+    line-height:1.45;
 }
 
-.about-video video {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    display: block;
+/* ===== Расположение как в макете ===== */
+
+.high-pressure{
+    grid-column:1;
+    grid-row:1;
+    margin-top:130px;
 }
 
-.supplier-section {
-    padding: 80px 20px;
+.reliability{
+    grid-column:2;
+    grid-row:1;
 }
 
-.supplier-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 28px;
-    padding: 60px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+.installation{
+    grid-column:1;
+    grid-row:2;
 }
 
-.supplier-title {
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #000000;
-    margin-bottom: 50px;
+.adaptation{
+    grid-column:2;
+    grid-row:2;
 }
 
-.supplier-container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.supplier-image {
-    flex: 0 0 380px;
-}
-
-.supplier-image img {
-    width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.supplier-info {
-    flex: 1;
-    color: #222;
-}
-
-.supplier-info p {
-    font-size: 1.17rem;
-    line-height: 1.7;
+.integration{
+    grid-column:2;
+    grid-row:3;
 }
 
 .categories-visual {
@@ -347,19 +340,17 @@
 }
 
 .leasing-form-section {
-    background-color: #333;
+    background: linear-gradient(90deg,#525252,#222222);
     padding: 80px 20px;
 }
 
 .leasing-form-container {
     max-width: 1300px;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 60px;
-
     flex-wrap: wrap;
 }
 
@@ -370,21 +361,19 @@
 
 .leasing-text h2 {
     color: #fff;
-    font-size: 2.6rem;
+    font-size: 44px;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 25px;
-
-    font-family: "Acherus Feral", sans-serif;
+    font-family: "Involve", sans-serif;
 }
 
 .leasing-text p {
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 16px;
     line-height: 1.7;
     max-width: 550px;
-
-    font-family: "Acherus Feral", sans-serif;
+    font-family: "Involve", sans-serif;
 }
 
 .leasing-form {
@@ -392,41 +381,189 @@
     min-width: 320px;
 }
 
-.info-block {
-    padding: 80px 20px;
+.about-company{
+    background: #ffffff;
+    padding:100px 0;
 }
 
-.info-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
+.about-company .container{
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 20px;
 }
 
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+/* ---------- Верхний блок ---------- */
+
+.about-top{
+    display:flex;
+    align-items:center;
+    gap:80px;
+    margin-bottom:80px;
 }
 
-.info-card {
-    text-align: center;
-    background-color: #ffffff;
-    padding: 30px 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.about-logo{
+    flex:0 0 280px;
+    text-align:center;
 }
 
-.info-card img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-    margin-bottom: 25px;
+.about-logo img{
+    width:100%;
+    max-width:260px;
 }
 
-.info-card p {
-    font-size: 1.15rem;
+.about-info{
+    flex:1;
+}
+
+.about-info h2{
+    font-family: 'Involve', sans-serif;
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:40px;
+    color:#000;
+}
+
+.about-info p{
+    font-family: 'Involve', sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    color:#000000;
+    margin-bottom:25px;
+}
+
+/* ---------- Нижний блок ---------- */
+
+.work-block{
+    background:#232323;
+    color:#fff;
+    border-radius:28px;
+    padding:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:120px;
+}
+
+.work-left{
+    width:35%;
+}
+
+.work-left h2{
+    font-family: 'Involve', sans-serif;
+    font-weight:550;
+    font-size:42px;
+    line-height:1;
+    margin-bottom:45px;
+}
+
+.work-left p{
+    font-family: 'Involve', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    color:#E6E6E6;
+}
+
+.work-right{
+    width:50%;
+}
+
+.work-right ol{
+    font-family: 'Involve', sans-serif;
+    padding-left:20px;
+    margin:0;
+}
+
+.work-right li{
+    font-size:17px;
+    line-height:2;
+    color:#F5F5F5;
+}
+
+.faq-section {
+    padding: 100px 0;
+    background: #FBFBFB;
+}
+
+.faq-title {
+    margin: 0 0 60px;
+    font-family: 'Involve', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #111;
+}
+
+.faq {
+    width: 100%;
+}
+
+.faq-item {
+    border-bottom: 1px solid #bdbdbd;
+}
+
+/* Вопрос */
+
+.faq-question {
+    width: 100%;
+    padding: 28px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Involve', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.3;
+
+    color: #111;
+}
+
+.faq-question span:first-child {
+    max-width: calc(100% - 60px);
+}
+
+/* Плюс */
+
+.faq-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1;
+    color: #111;
+    transition: transform 0.3s ease;
+}
+
+/* Ответ */
+
+.faq-answer {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+}
+
+.faq-answer-content {
+    padding: 0 70px 28px 0;
+    font-family: 'Involve', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
     line-height: 1.6;
-    color: #222;
+    color: #000000;
+}
+
+/* Открытый вопрос */
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
 }
 
 @media (max-width: 992px) {
@@ -448,32 +585,79 @@
     .menu-slider img {
         height: 350px;
     }
-
-    .supplier-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .supplier-image {
-        flex: unset;
-        max-width: 280px;
-        margin: 0 auto;
-    }
-
-    .supplier-wrapper {
-        padding: 40px 25px;
-    }
-
-    .supplier-title {
-        font-size: 1.8rem;
-    }
-
-    .supplier-info p {
-        font-size: 1rem;
-    }
     
     .advantages-container {
         gap: 20px;
+    }
+
+    .benefits-card{
+
+        flex-direction:column;
+
+        padding:50px;
+
+        gap:40px;
+    }
+
+    .benefits-left,
+    .benefits-right{
+
+        width:100%;
+    }
+
+    .benefits-left h2{
+        font-size:38px;
+    }
+
+    .about-company {
+        padding: 70px 0;
+    }
+
+    .about-top {
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .about-logo {
+        flex-basis: 190px;
+    }
+
+    .about-logo img {
+        max-width: 180px;
+    }
+
+    .about-info h2 {
+        font-size: 44px;
+    }
+
+    .about-info p {
+        font-size: 16px;
+        line-height: 1.35;
+    }
+
+    .work-block {
+        padding: 50px;
+        gap: 40px;
+    }
+
+    .work-left {
+        width: 38%;
+    }
+
+    .work-right {
+        width: 62%;
+    }
+
+    .work-left h2 {
+        font-size: 42px;
+    }
+
+    .work-left p {
+        font-size: 15px;
+    }
+
+    .work-right li {
+        font-size: 15px;
     }
 }
 
@@ -644,5 +828,111 @@
 
     .info-card p {
         font-size: 1rem;
+    }
+
+    .benefits-section{
+        padding:40px 0;
+    }
+
+    .benefits-card{
+        width:92%;
+        padding:30px 25px;
+    }
+
+    .benefits-left h2{
+        font-size:30px;
+    }
+
+    .benefits-left p{
+        font-size:16px;
+    }
+
+    .benefit-item{
+        font-size:17px;
+    }
+
+    .about-company {
+        padding: 60px 0;
+    }
+
+    .about-company .container {
+        padding: 0 20px;
+    }
+
+    /* Верхний блок становится вертикальным */
+
+    .about-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+
+    /* Логотип */
+
+    .about-logo {
+        flex: none;
+        width: 100%;
+    }
+
+    .about-logo img {
+        width: 200px;
+        max-width: 70%;
+    }
+
+    /* Текст */
+
+    .about-info {
+        width: 100%;
+        text-align: left;
+    }
+
+    .about-info h2 {
+        margin-bottom: 25px;
+        font-size: 40px;
+        line-height: 1.05;
+    }
+
+    .about-info p {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    /* Блок "Как мы работаем" */
+
+    .work-block {
+        flex-direction: column;
+        gap: 40px;
+        padding: 45px 35px;
+        border-radius: 18px;
+    }
+
+    .work-left,
+    .work-right {
+        width: 100%;
+    }
+
+    .work-left h2 {
+        margin-bottom: 25px;
+        font-size: 42px;
+    }
+
+    .work-left p {
+        max-width: 500px;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .work-right ol {
+        padding-left: 23px;
+    }
+
+    .work-right li {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .work-right li:not(:last-child) {
+        margin-bottom: 13px;
     }
 }
