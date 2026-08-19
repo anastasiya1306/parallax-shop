@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block title %}{{ subcategory.name }} | {{ category.name }} | Параллакс{% endblock %}
 
@@ -9,76 +10,133 @@
 
 {% block content %}
 
-{% if subcategory.promo_video %}
-<div class="promo-video-wrapper">
-    <video autoplay muted loop playsinline class="promo-video">
-        <source src="{{ subcategory.promo_video.url }}" type="video/mp4">
-    </video>
-</div>
-{% endif %}
+<section class="products-page">
+    <!-- Заголовок страницы -->
+    <div class="products-header">
 
-<div class="container-fluid my-3">
-    {% if show_back_to_category %}
-        <a href="{% url 'main:category_detail' category.slug %}" class="details-btn">← Назад</a>
-    {% else %}
-        <a href="{% url 'main:home' %}" class="details-btn">← На главную</a>
-    {% endif %}
-</div>
-
-
-<div class="container my-5">
-    <div class="row gx-4 gy-4">
-        {% if products %}
-            {% for product in products %}
-            <div class="col-md-3 col-sm-6">
-                <div class="product-card">
-                    {% if product.image %}
-                        <a href="{% url 'main:product_detail' product.slug %}">
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                    {% endif %}
-                    <div class="product-title">{{ product.name }}</div>
-                    <a href="{% url 'main:product_detail' product.slug %}" class="details-btn">Подробнее</a>
-                </div>
-            </div>
-            {% endfor %}
+        {% if show_back_to_category %}
+            <a href="{% url 'main:category_detail' category.slug %}"
+               class="back-button"
+               aria-label="Назад">
+                <span>‹</span>
+            </a>
         {% else %}
-            <p>Товары пока не добавлены</p>
+            <a href="{% url 'main:home' %}"
+               class="back-button"
+               aria-label="На главную">
+                <span>‹</span>
+            </a>
         {% endif %}
-    </div>
-</div>
 
-{% if is_paginated %}
-<div class="pagination-wrapper">
-    <nav>
-        <ul class="pagination justify-content-center">
+        <h1>{{ subcategory.name }}</h1>
+
+    </div>
+
+    <!-- Товары -->
+    {% if products %}
+        <div class="products-grid">
+            {% for product in products %}
+                <article class="product-item">
+
+                    <!-- Изображение -->
+                    <a href="{% url 'main:product_detail' product.slug %}"
+                       class="product-image-link">
+
+                        {% if product.image %}
+                            <img
+                                src="{{ product.image.url }}"
+                                alt="{{ product.name }}"
+                                class="product-image"
+                            >
+                        {% else %}
+                            <div class="product-image-placeholder">
+                                <div class="placeholder-icon">
+                                    <span></span>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                    </a>
+
+                    <!-- Информация о товаре -->
+                    <div class="product-info">
+
+                        <a href="{% url 'main:product_detail' product.slug %}"
+                           class="product-name">
+                            {{ product.name }}
+                        </a>
+ 
+                        <div class="product-price">
+                            {% if product.price == 1 %}
+                                По запросу
+                            {% else %}
+                                {% if product.has_sale %}
+                                    {{ product.sale_price|floatformat:0|intcomma }} руб.
+                                {% else %}
+                                    {{product.price | floatformat:0 | intcomma }} руб.
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        
+
+                        <a href="{% url 'main:product_detail' product.slug %}"
+                           class="product-button">
+                            Подробнее
+                        </a>
+
+                    </div>
+
+                </article>
+            {% endfor %}
+        </div>
+
+    {% else %}
+
+        <div class="products-empty">
+            <p>Товары пока не добавлены</p>
+        </div>
+
+    {% endif %}
+
+    <!-- Пагинация -->
+    {% if is_paginated %}
+
+        <div class="products-pagination">
 
             {% if page_obj.has_previous %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">«</a>
-                </li>
+                <a href="?page={{ page_obj.previous_page_number }}"
+                   class="pagination-arrow">
+                    ‹
+                </a>
             {% endif %}
 
             {% for num in page_obj.paginator.page_range %}
                 {% if page_obj.number == num %}
-                    <li class="page-item active">
-                        <span class="page-link">{{ num }}</span>
-                    </li>
+
+                    <span class="pagination-number active">
+                        {{ num }}
+                    </span>
+
                 {% else %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
-                    </li>
+
+                    <a href="?page={{ num }}"
+                       class="pagination-number">
+                        {{ num }}
+                    </a>
+
                 {% endif %}
+
             {% endfor %}
 
             {% if page_obj.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">»</a>
-                </li>
+                <a href="?page={{ page_obj.next_page_number }}"
+                   class="pagination-arrow">
+                    ›
+                </a>
             {% endif %}
 
-        </ul>
-    </nav>
-</div>
-{% endif %}
+        </div>
+    {% endif %}
+</section>
+
 {% endblock %}
