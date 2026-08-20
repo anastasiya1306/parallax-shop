@@ -18,6 +18,7 @@
     <!-- Общие стили -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bitrix_form.css' %}">
     <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
     {% block extra_styles %}{% endblock %}
 </head>
@@ -28,6 +29,8 @@
 <main class="container-fluid px-0">
     {% block content %}{% endblock %}
 </main>
+
+{% include 'includes/bitrix_form.html' %}
 
 {% include 'includes/contacts.html' %}
 

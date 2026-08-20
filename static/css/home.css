@@ -116,10 +116,10 @@
 }
 
 .products-title {
-    margin: 0 0 90px;
+    margin: 0 0 70px;
 
     font-family: 'Involve', sans-serif;
-    font-size: 50px;
+    font-size: 48px;
     font-weight: 700;
     line-height: 105%;
     letter-spacing: 0.02em;
@@ -424,48 +424,6 @@
 .integration{
     grid-column:2;
     grid-row:3;
-}
-
-.leasing-form-section {
-    background: linear-gradient(90deg,#525252,#222222);
-    padding: 80px 20px;
-}
-
-.leasing-form-container {
-    max-width: 1300px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-    flex-wrap: wrap;
-}
-
-.leasing-text {
-    flex: 1;
-    min-width: 320px;
-}
-
-.leasing-text h2 {
-    color: #fff;
-    font-size: 44px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 25px;
-    font-family: "Involve", sans-serif;
-}
-
-.leasing-text p {
-    color: #fff;
-    font-size: 16px;
-    line-height: 1.7;
-    max-width: 550px;
-    font-family: "Involve", sans-serif;
-}
-
-.leasing-form {
-    flex: 1;
-    min-width: 320px;
 }
 
 .about-company{
@@ -903,23 +861,6 @@
 
     .category-overlay span {
         font-size: 1.1rem;
-    }
-
-    .leasing-form-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .leasing-text h2 {
-        font-size: 2.2rem;
-    }
-
-    .leasing-text p {
-        font-size: 1rem;
-    }
-
-    .leasing-form {
-        width: 100%;
     }
 
     .info-grid {
