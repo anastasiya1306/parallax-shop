@@ -237,8 +237,8 @@
     align-items: center;
     justify-content: center;
 
-    width: 178px;
-    height: 50px;
+    width: 170px;
+    height: 40px;
 
     border-radius: 25px;
 
@@ -247,7 +247,7 @@
     color: #fff;
 
     font-family: 'Involve', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 
     text-decoration: none;
