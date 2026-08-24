@@ -8,40 +8,62 @@
 {% endblock %}
 
 {% block content %}
-<div class="menu-section">
-    <div class="menu-container">
-        <ul class="category-list">
-            {% for category in categories %}
-            <li>
-                
-                {% if category.has_own_page %}
-                    <a href="{% url 'main:category_detail' category.slug %}" class="category-box">
-                        <span>{{ category.name }}</span>
-                    </a>
-                {% else %}
-                    <div class="category-box">
-                        <span>{{ category.name }}</span>
-                    </div>    
-                {% endif %}
+<section class="catalog-section">
+    <div class="catalog-container">
+        <div class="catalog-menu">
+            <div class="catalog-label">
+                Завод изготовитель
+            </div>
 
-                {% if not category.has_own_page %}
-                <ul class="submenu">
-                    {% for sub in category.subcategories.all %}
-                    <li>
-                        <a href="{% url 'main:products_by_subcategory' sub.slug %}">{{ sub.name }}</a>
+            <h2 class="catalog-title">
+                Сельхозтехника
+                и запасные
+                части
+            </h2>
+
+            <!-- Категории -->
+            <ul class="category-list">
+                {% for category in categories %}
+                    <li class="category-item">
+                        {% if category.has_own_page %}
+
+                            <a href="{% url 'main:category_detail' category.slug %}"
+                               class="category-button {% if forloop.first %}active{% endif %}">
+                                <span>{{ category.name }}</span>
+                            </a>
+
+                        {% else %}
+
+                            <div class="category-button {% if forloop.first %}active{% endif %}">
+                                <span>{{ category.name }}</span>
+                            </div>
+
+                            <ul class="submenu">
+                                {% for sub in category.subcategories.all %}
+                                    <li>
+                                        <a href="{% url 'main:products_by_subcategory' sub.slug %}">
+                                            {{ sub.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            
-            </li>
-            {% endfor %}
-        </ul>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="catalog-slider">
+            <div class="slider-window">
+                <div class="slider-track" id="slider-track">
+                    <!-- Слайды сюда добавит JavaScript -->
+                </div>
+            </div>
+            <div class="slider-dots" id="slider-dots">
+            </div>
+        </div>
     </div>
-    <div class="menu-slider">
-        <div id="slider-media"></div>
-    </div>
-</div>
+</section>
 
 <section class="products-section" id="products">
 

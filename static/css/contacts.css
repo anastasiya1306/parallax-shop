@@ -90,9 +90,11 @@
 
 @media (max-width: 1200px) {
     .footer-container {
-        padding: 60px 40px 50px;
+        width: calc(100% - 80px);
+        padding: 60px 0 50px;
         grid-template-columns: 1fr 1fr;
-        row-gap: 50px;
+        column-gap: 50px;
+        row-gap: 45px;
     }
 
     .footer-left {
@@ -106,34 +108,54 @@
 
 @media (max-width: 700px) {
     .footer-container {
-        padding: 50px 25px 40px;
+        width: calc(100% - 40px);
+        min-height: auto;
+        padding: 45px 0 40px;
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 35px;
     }
+
+    /* ЛЕВАЯ ЧАСТЬ */
 
     .footer-left {
         width: 100%;
     }
 
     .footer-logo {
-        margin-bottom: 25px;
+        margin-bottom: 22px;
     }
 
     .footer-logo img {
-        width: 200px;
+        width: 190px;
     }
 
     .footer-info {
-        font-size: 14px;
+        max-width: 100%;
+        font-size: 13px;
+        line-height: 150%;
+        letter-spacing: 0.02em;
+    }
+
+    /* КОЛОНКИ */
+
+    .footer-column {
+        width: 100%;
     }
 
     .footer-column h3 {
-        margin: 0 0 15px;
-        font-size: 21px;
+        margin: 0 0 14px;
+        font-size: 20px;
+        line-height: 110%;
+    }
+
+    .footer-links {
+        gap: 2px;
     }
 
     .footer-links a {
         font-size: 14px;
+        line-height: 170%;
+        white-space: normal;
     }
 }
